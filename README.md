@@ -5,7 +5,7 @@ Mainly following the official tutorial from Anthropic:
 
 ## (*) Implementation Notes:
 
-You may have to do two things differently from what the official docs describe:
+You may have to do three things differently from what the official docs describe:
 
 ### 1. Path to `claude_desktop_config.json`
 
@@ -34,6 +34,12 @@ Actually, on your PC, you may find the files under:
 
 - "C:\Users\\<your-windows-username\>\AppData\Local\Claude\logs\mcp.log"
 - "C:\Users\\<your-windows-username\>\AppData\Local\Claude\logs\mcp-server-weather.log"
+
+### 3. Optional: Preventing false positives
+
+After successfully activating the weather MCP server connector in Claude for Desktop, the official docs recommend to test it just by asking: **"What's the weather in X?"**.
+
+But Claude might just use its built-in weather-tool to process this prompt, instead of the weather server you built. To ensure the server is used, simply add this instruction to the prompt: **"Use the "weather" connector"**.
 
 ## How the process (roughly) works at a glance
 
